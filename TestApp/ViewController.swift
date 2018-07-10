@@ -10,9 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var label: UILabel!
+    @IBOutlet var button: UIButton!
+    
+    var toggle = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        label.text = "Hello"
+        
+        button.setTitle("Button", for: UIControlState.normal)
+    }
+    
+    @IBAction func buttonTapped(_ sender : Any) {
+        if (!toggle) {
+            label.text = "World"
+            toggle = true;
+        }
+        else {
+            label.text = "Hello"
+            toggle = false
+        }
     }
 
     override func didReceiveMemoryWarning() {
